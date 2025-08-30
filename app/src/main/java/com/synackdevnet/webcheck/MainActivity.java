@@ -22,12 +22,12 @@ public class MainActivity extends AppCompatActivity {
         webView = findViewById(R.id.webView);
 
         // Floating "?" → About
-        View aboutBtn = findViewById(R.id.btnAbout);
-        if (aboutBtn != null) {
-            aboutBtn.setOnClickListener(v ->
-                startActivity(new Intent(this, AboutActivity.class))
-            );
-        }
+       // View aboutBtn = findViewById(R.id.btnAbout);
+       // if (aboutBtn != null) {
+           // aboutBtn.setOnClickListener(v ->
+               // startActivity(new Intent(this, AboutActivity.class))
+          //  );
+        //}
 
         // Debugging (chrome://inspect)
         WebView.setWebContentsDebuggingEnabled(true);

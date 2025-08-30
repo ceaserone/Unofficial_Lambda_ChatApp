@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Fullscreen background image -->
+    <ImageView
+        android:id="@+id/bgImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_about"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/app_name" />
+
+    <!-- Semi-transparent dim overlay -->
+    <View
+        android:id="@+id/dimOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CC000000" />
+
+    <!-- About card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="#EE1D1D1D"
+        android:elevation="8dp">
+
+        <!-- Single TextView: title + body (HTML), centered -->
+        <TextView
+            android:id="@+id/aboutBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#DDDDDD"
+            android:textColorLink="#3e1abd"
+            android:linksClickable="true"
+            android:gravity="center"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/btnClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="Close"
+            android:textColor="#FFFFFF"
+            android:background="#663e1abd" />
+    </LinearLayout>
+</FrameLayout>

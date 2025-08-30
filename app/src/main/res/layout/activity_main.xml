@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
+    <!-- Your WebView -->
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-</LinearLayout>
+
+    <!-- Floating transparent "?" button (top-right) -->
+    <TextView
+        android:id="@+id/btnAbout"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:text="?"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="top|end"
+        android:layout_margin="12dp"
+        android:textColor="#FFFFFF"
+        android:background="#66111111"  <!-- ~40% opaque -->
+        android:clickable="true"
+        android:focusable="true"
+        android:elevation="6dp" />
+</FrameLayout>

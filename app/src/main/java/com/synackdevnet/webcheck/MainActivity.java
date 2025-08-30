@@ -1,7 +1,11 @@
 package com.synackdevnet.webcheck;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.webkit.CookieManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -17,6 +21,14 @@ public class MainActivity extends AppCompatActivity {
 
         webView = findViewById(R.id.webView);
 
+        // Floating "?" → About
+        View aboutBtn = findViewById(R.id.btnAbout);
+        if (aboutBtn != null) {
+            aboutBtn.setOnClickListener(v ->
+                startActivity(new Intent(this, AboutActivity.class))
+            );
+        }
+
         // Debugging (chrome://inspect)
         WebView.setWebContentsDebuggingEnabled(true);
 
@@ -26,14 +38,14 @@ public class MainActivity extends AppCompatActivity {
         s.setDomStorageEnabled(true);     // critical for SPAs
         s.setDatabaseEnabled(true);
         s.setLoadsImagesAutomatically(true);
-        if (android.os.Build.VERSION.SDK_INT >= 21) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             s.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
         }
 
         // Cookies
-        android.webkit.CookieManager cm = android.webkit.CookieManager.getInstance();
+        CookieManager cm = CookieManager.getInstance();
         cm.setAcceptCookie(true);
-        if (android.os.Build.VERSION.SDK_INT >= 21) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             cm.setAcceptThirdPartyCookies(webView, true);
         }
 

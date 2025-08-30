@@ -21,5 +21,11 @@
 
         <activity android:name=".MainActivity"
             android:exported="true"/>
+
+        <!-- New About page activity -->
+        <activity
+            android:name=".AboutActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Material3.DayNight.NoActionBar"/>
     </application>
 </manifest>

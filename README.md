@@ -1,0 +1,6 @@
+unofficial lambda chat app for android...
+i just found put they are stopping the chat 
+September 25th so i wont put allot of work 
+into the readme ugh...
+
+use actions to build or download the debug

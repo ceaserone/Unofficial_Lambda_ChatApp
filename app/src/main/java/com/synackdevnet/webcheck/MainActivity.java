@@ -78,6 +78,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        webView.loadUrl("https://lambda.chat");
+        webView.loadUrl("https://127.0.0.1:8080");
     }
 }
